@@ -10,7 +10,7 @@ export const Container = styled.TextInput<InputProps>`
   background-color: ${theme.input.backgroundColor};
   border-radius: ${theme.input.borderRadius}px;
   border-width: 1px;
-  border-color: ${props =>
+  border-color: ${(props: InputProps) =>
     props.error
       ? theme.input.borderColor.danger
       : theme.input.borderColor.default};

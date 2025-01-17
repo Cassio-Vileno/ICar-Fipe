@@ -5,8 +5,8 @@ import { RFValue } from '../../../utils/normalize';
 
 export const Container = styled.Text<ParagraphProps>`
   width: ${theme.paragraph.width};
-  font-family: ${props => props.fontFamily || 'Poppins_500Medium'};
-  font-size: ${props => RFValue(props.size || theme.paragraph.size)}px;
-  color: ${props => props.color || theme.paragraph.color.default};
-  ${props => props.textAlign && `text-align: ${props.textAlign}`};
+  font-family: ${(props: ParagraphProps) => props.fontFamily || 'Poppins_500Medium'};
+  font-size: ${(props: ParagraphProps) => RFValue(props.size || theme.paragraph.size)}px;
+  color: ${(props: ParagraphProps) => props.color || theme.paragraph.color.default};
+  ${(props: ParagraphProps) => props.textAlign && `text-align: ${props.textAlign}`};
 `;

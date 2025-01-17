@@ -29,7 +29,7 @@ export const Container = styled.TouchableOpacity<{ error?: any }>`
   border-radius: ${theme.input.borderRadius}px;
   background-color: ${theme.input.backgroundColor};
   border-width: 1px;
-  border-color: ${props =>
+  border-color: ${(props: any) =>
     props.error
       ? theme.input.borderColor.danger
       : theme.input.borderColor.default};

@@ -11,7 +11,7 @@ export const Overlay = styled.TouchableOpacity`
 
 export const Container = styled.View<{ height?: number }>`
   width: 90%;
-  height: ${({ height }) => height || 330}px;
+  height: ${({ height }: any) => height || 330}px;
   position: relative;
   padding: 20px 25px;
   background-color: white;
@@ -72,5 +72,5 @@ export const Input = styled.TextInput<any>`
   border-radius: 8px;
   border-style: solid;
   border-width: 1px;
-  border-color: ${props => (props.error ? 'red' : 'white')};
+  border-color: ${(props: any) => (props.error ? 'red' : 'white')};
 `;

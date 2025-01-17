@@ -4,11 +4,11 @@ import { theme } from '../../../theme/default.theme';
 import { RFValue } from '../../../utils/normalize';
 
 export const Container = styled.TouchableOpacity<ButtonProps>`
-  background-color: ${props =>
+  background-color: ${(props: ButtonProps) =>
     props.backgroundColor || theme.button.backgroundColor.primary};
   padding: 10px;
-  height: ${props => props.height || theme.button.height}px;
-  width: ${props => props.width || theme.button.width};
+  height: ${(props: ButtonProps) => props.height || theme.button.height}px;
+  width: ${(props: ButtonProps) => props.width || theme.button.width};
   border-radius: ${theme.button.borderRadius}px;
   justify-content: center;
   align-items: center;
@@ -19,5 +19,5 @@ export const Container = styled.TouchableOpacity<ButtonProps>`
 export const ButtonText = styled.Text<ButtonProps>`
   font-weight: bold;
   font-size: ${RFValue(theme.button.textSize)}px;
-  font-weight: ${props => props.weight || 'bold'};
+  font-weight: ${(props: ButtonProps) => props.weight || 'bold'};
 `;

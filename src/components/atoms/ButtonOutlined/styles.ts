@@ -1,23 +1,24 @@
+import { css } from 'styled-components';
 import styled from 'styled-components/native';
 import { theme } from '../../../theme/default.theme';
 import { RFValue } from '../../../utils/normalize';
 import { Paragraph } from '../../atoms/Paragraph';
-import { css } from 'styled-components';
 
 interface ButtonOutlinedProps {
   width?: string;
   color?: string;
+  disabled?: boolean;
 }
 
 export const Container = styled.TouchableOpacity<ButtonOutlinedProps>`
-  width: ${props => props.width || theme.button.width};
+  width: ${(props: ButtonOutlinedProps) => props.width || theme.button.width};
   border: 2px solid ${theme.button.borderColor};
   height: 45px;
   border-radius: ${theme.button.borderRadius}px;
   justify-content: center;
   align-items: center;
   
-  ${({ disabled }) =>
+  ${({ disabled }: ButtonOutlinedProps) =>
     disabled &&
     css`
       opacity: 0.6;
