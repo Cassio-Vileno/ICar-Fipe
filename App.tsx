@@ -9,9 +9,9 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { StyleSheet } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-import { ThemeContext } from "styled-components";
 import { AuthProvider } from "./src/context/auth.context";
 import { DialogProvider } from "./src/context/dialog.context";
 import Routes from "./src/routes";
@@ -30,19 +30,26 @@ export default function App() {
   }
   return (
     <>
-      <ThemeContext.Provider value={ThemeContext}>
-        <NavigationContainer>
-          <DialogProvider>
-            <AuthProvider>
-              <SafeAreaProvider>
+      <NavigationContainer>
+        <DialogProvider>
+          <AuthProvider>
+            <SafeAreaProvider>
+              <SafeAreaView style={styles.safeArea}>
                 <Routes />
-              </SafeAreaProvider>
-            </AuthProvider>
-          </DialogProvider>
-        </NavigationContainer>
-      </ThemeContext.Provider>
+              </SafeAreaView>
+            </SafeAreaProvider>
+          </AuthProvider>
+        </DialogProvider>
+      </NavigationContainer>
 
       <StatusBar backgroundColor="#ffffff" translucent={false} />
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#fff',
+  }
+});
