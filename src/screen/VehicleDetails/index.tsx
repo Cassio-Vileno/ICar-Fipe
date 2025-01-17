@@ -1,6 +1,6 @@
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useRoute } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
 import {
   Container,
   Content
@@ -44,41 +44,43 @@ const styles = StyleSheet.create({
 });
 
 export default function VehicleDetails(): JSX.Element {
-  const navigation = useNavigation<any>();
   const route = useRoute();
   const { modelId, vehicles, brand } = route.params as RouteParams;
   const [modelDetails, setModelDetails] = useState<ModelDetails>({} as ModelDetails)
   const [years, setYears] = useState<ItemSelect[]>([])
+  const [loading, setLoading] = useState(false);
 
   const {
-    handleSubmit,
     control,
     setValue,
-    setError,
-    reset,
     formState: { errors },
   } = useForm();
 
 
   const getYearVehicle = async () => {
     try {
+      setLoading(true)
       const data = await VehicleService.getYearVehicle({ vehicles, brand: brand.codigo, model: modelId })
-      const response = mapModelYears(data)
-      setYears(response)
+      const YearsModel = mapModelYears(data)
+      setYears(YearsModel)
       getVehicleDetails(data[0].codigo)
       setValue("year", data[0].codigo);
     } catch (error) {
       console.log(error)
+      setLoading(false)
     }
   }
 
   const getVehicleDetails = async (yearCode: string) => {
     try {
+      setLoading(true)
       const data = await VehicleService.getVehicleDetails({ vehicles, brand: brand.codigo, model: modelId, yearCode })
       setModelDetails(data)
       console.log(data)
     } catch (error) {
       console.log(error)
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -86,7 +88,11 @@ export default function VehicleDetails(): JSX.Element {
     getYearVehicle()
   }, [])
 
-  return (
+  return loading ? (
+    <Row jc="center" alignItems="center">
+      <ActivityIndicator testID="activityIndicator" />
+    </Row>
+  ) : (
     <Container>
       <Row ml={12} mr={12} mt={5}>
         <HeaderShow />

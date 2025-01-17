@@ -6,7 +6,7 @@ import {
   Content
 } from "./styles";
 
-import { View } from "react-native";
+import { ActivityIndicator, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { Icon } from "../../components/atoms/Icon";
 import Row from "../../components/atoms/Row";
@@ -35,7 +35,7 @@ export default function Model(): JSX.Element {
   const [models, setModels] = useState<Brand[]>([])
   const [search, setSearch] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
-
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -56,12 +56,14 @@ export default function Model(): JSX.Element {
 
 
   const getAllModels = async (props: Omit<RouteParams, 'brand'>) => {
-    console.log(props)
     try {
+      setLoading(true)
       const data = await ModelsService.getAll(props)
       setModels(data.modelos)
     } catch (error) {
       console.log(error)
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -82,20 +84,24 @@ export default function Model(): JSX.Element {
           </ButtonBack>
         </Row>
         <Row mt={15}>
-          <FlatList
-            style={{ height: '90%', paddingRight: 12, paddingLeft: 12 }}
-            data={filteredBrands}
-            ListFooterComponent={<View style={{ height: 70 }} />}
-            renderItem={({ item }) => (
-              <ItemListModel
-                key={item.codigo}
-                modelName={item.nome}
-                brandName={brand.nome}
-                vehicleType={vehicles}
-                onPress={() => navigation.navigate("VehicleDetails", { modelId: item.codigo, vehicles, brand })}
-              />
-            )}
-          />
+          {loading ? (
+            <ActivityIndicator testID="activityIndicator" />
+          ) : (
+            <FlatList
+              style={{ height: '90%', paddingRight: 12, paddingLeft: 12 }}
+              data={filteredBrands}
+              ListFooterComponent={<View style={{ height: 70 }} />}
+              renderItem={({ item }) => (
+                <ItemListModel
+                  key={item.codigo}
+                  modelName={item.nome}
+                  brandName={brand.nome}
+                  vehicleType={vehicles}
+                  onPress={() => navigation.navigate("VehicleDetails", { modelId: item.codigo, vehicles, brand })}
+                />
+              )}
+            />
+          )}
         </Row>
       </Content>
     </Container>
