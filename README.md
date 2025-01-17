@@ -23,7 +23,7 @@ O **iCar Fipe** é um projeto demonstrativo desenvolvido em **React Native** com
 ## 🚀 Como Executar o Projeto
 ```markdown
 # Clone este repositório
-git clone https://github.com/seu-usuario/iCar-Fipe.git
+git clone https://github.com/Cassio-Vileno/ICar-Fipe.git
 
 # Acesse a pasta do projeto
 cd iCar-Fipe
