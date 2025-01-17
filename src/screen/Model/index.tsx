@@ -9,6 +9,7 @@ import {
 import { ActivityIndicator, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { Icon } from "../../components/atoms/Icon";
+import { Paragraph } from "../../components/atoms/Paragraph";
 import Row from "../../components/atoms/Row";
 import Header from "../../components/molecules/Header";
 import ItemListModel from "../../components/molecules/ItemListModel";
@@ -17,6 +18,7 @@ import { ModelsService } from "../../services/models.service";
 import { theme } from "../../theme/default.theme";
 import { Brand } from "../../types/brand";
 import { EnunVehicleType } from "../../utils/getVehicleImage";
+import { RFValue } from "../../utils/normalize";
 
 interface RouteParams {
   id: string;
@@ -76,12 +78,14 @@ export default function Model(): JSX.Element {
       <Header />
       <Content>
         <Row mt={5} px={12}>
-          <SearchBar onChageText={(e) => setSearch(e)} />
+          <SearchBar placeholder="Pesquisar modelo" onChageText={(e) => setSearch(e)} />
         </Row>
-        <Row ml={12} mt={10}>
+        <Row ml={12} mt={10} jc="space-between" alignItems="center" fd="row">
           <ButtonBack onPress={() => navigation.goBack()}>
             <Icon size={25} color={theme.color.primary} name="chevron-left" />
           </ButtonBack>
+          <Paragraph color={theme.color.NeutralGra}>Modelos</Paragraph>
+          <View style={{ width: RFValue(40) }} />
         </Row>
         <Row mt={15}>
           {loading ? (

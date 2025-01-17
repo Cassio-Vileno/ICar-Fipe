@@ -2,11 +2,13 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
+import { Paragraph } from "../../components/atoms/Paragraph";
 import Row from "../../components/atoms/Row";
 import Header from "../../components/molecules/Header";
 import ItemListBrand from "../../components/molecules/ItemListBrand";
 import SearchBar from "../../components/molecules/SearchBar";
 import { BrandsService } from "../../services/brands.service";
+import { theme } from "../../theme/default.theme";
 import { Brand } from "../../types/brand";
 import { EnunVehicleType } from "../../utils/getVehicleImage";
 import images from "../../utils/images";
@@ -56,7 +58,7 @@ export default function Home(): JSX.Element {
       <Header />
       <Content>
         <Row mt={5} mr={12} ml={12}>
-          <SearchBar onChageText={(e) => setSearch(e)} />
+          <SearchBar placeholder="Pesquisar marca" onChageText={(e) => setSearch(e)} />
         </Row>
         <Row pt={10} px={20} fd="row" jc="space-between">
           <ButtonVehicle isSelected={vehiclesType === "carros"} onPress={() => setVehiclesTypes(EnunVehicleType['CAR'])}>
@@ -69,7 +71,10 @@ export default function Home(): JSX.Element {
             <IconVehicle resizeMode="contain" source={images.truck} />
           </ButtonVehicle>
         </Row>
-        <Row mt={15}>
+        <Row px={20} pt={10}>
+          <Paragraph color={theme.color.NeutralGra}>Marcas</Paragraph>
+        </Row>
+        <Row mt={10}>
           {loading ? (
             <ActivityIndicator testID="activityIndicator" />
           ) : (
