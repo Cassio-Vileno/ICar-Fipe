@@ -19,14 +19,14 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.cassiovileno.appgol"
+      "package": "com.cassiovileno.icarfipe"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "37a57b82-d13e-4780-aab8-a83381f69d76"
+        "projectId": "d78d9beb-e7ed-4cd8-85a4-d0417f2c7b12"
       }
     },
     "owner": "cassiovileno"
