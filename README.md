@@ -13,6 +13,7 @@ O **iCar Fipe** é um projeto demonstrativo desenvolvido em **React Native** com
 - **Context API** (Gerenciar dados de Login)
 - **Async Storage** (Gerenciar dados de Login)
 - **Styled Components** (Estilização da aplicação)
+- **React Hook Form** (Para gerenciar formularios)
 - **Axios** (para requisições HTTP)
 - **React Navigation** (para navegação entre telas)
 - **Jest e Testing Library** (para testes)
