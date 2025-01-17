@@ -47,7 +47,7 @@ O usuário pode acessar o sistema utilizando:
 - **Usuário:** `teste`
 - **Senha:** `123`
 
-  ![Imagem do WhatsApp de 2025-01-17 à(s) 10 58 38_03e34137](https://github.com/user-attachments/assets/2e02def7-4ac8-4ffe-81cd-5fd08e30b1b8)
+<img src="https://github.com/user-attachments/assets/2e02def7-4ac8-4ffe-81cd-5fd08e30b1b8" alt="Tela de Login" width="400">
 
 #
 ### 🏠 Tela Home
@@ -57,8 +57,8 @@ O usuário pode acessar o sistema utilizando:
  - Pesquisar marcas de veículos na barra de pesquisa
  - Filtrar por Carros, Motos ou Caminhões
  - Visualizar uma lista de marcas
-
-![Imagem do WhatsApp de 2025-01-17 à(s) 10 58 37_2bbe12d7](https://github.com/user-attachments/assets/8fdca40d-5c19-4902-a170-128445199258)
+   
+ <img src="https://github.com/user-attachments/assets/8fdca40d-5c19-4902-a170-128445199258" alt="Tela Home" width="400">
 
 #
 
@@ -69,7 +69,7 @@ Após selecionar uma marca, a tela de seleção de modelo exibe:
 - Uma barra de pesquisa para buscar modelos específicos
 - Uma lista de modelos correspondentes à marca e tipo de veículo escolhido
 
-![Imagem do WhatsApp de 2025-01-17 à(s) 10 58 37_ebccc5fd](https://github.com/user-attachments/assets/ee6b0d67-23e7-4a7f-b19a-7197b853a484)
+<img src="https://github.com/user-attachments/assets/ee6b0d67-23e7-4a7f-b19a-7197b853a484" alt="Tela de Seleção de Modelo" width="400">
 
 
 #
@@ -84,7 +84,8 @@ Ao selecionar um modelo, são exibidas as informações detalhadas do veículo:
 - Código FIPE
 - Ano do Modelo (com opção de seleção de diferentes anos)
 
-![Imagem do WhatsApp de 2025-01-17 à(s) 10 58 37_17ba18b0](https://github.com/user-attachments/assets/de79699a-bcf1-49d5-ad0c-a9c9cdac18ac)
+<img src="https://github.com/user-attachments/assets/de79699a-bcf1-49d5-ad0c-a9c9cdac18ac" alt="Tela de Detalhes do Veículo" width="400">
+
 
 #
 
@@ -96,7 +97,7 @@ Clicando no ícone de "usuário" na Home, o usuário pode:
 
 - Encerrar a sessão clicando no botão "Sair"
 
-![user](https://github.com/user-attachments/assets/8b2793bc-043f-4448-b526-f526f0336a00)
+<img src="https://github.com/user-attachments/assets/8b2793bc-043f-4448-b526-f526f0336a00" alt="Tela de Perfil do Usuário" width="400">
 
 #
 
