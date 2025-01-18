@@ -76,7 +76,6 @@ export default function VehicleDetails(): JSX.Element {
       setLoading(true)
       const data = await VehicleService.getVehicleDetails({ vehicles, brand: brand.codigo, model: modelId, yearCode })
       setModelDetails(data)
-      console.log(data)
     } catch (error) {
       console.log(error)
     } finally {

@@ -3,7 +3,6 @@ import { ModelYear } from "../types/models";
 
 export function mapModelYears(modelYears: ModelYear[]): ItemSelect[] {
   const result: ItemSelect[] = [];
-  console.log(modelYears)
 
   modelYears.forEach((model) => {
     result.push({

@@ -13,7 +13,6 @@ export class VehicleService {
   }
 
   static async getVehicleDetails(criteria: CriteriaVehicle) {
-    console.log("getVehicleDetails", criteria)
     const { data } = await apiVehicle.get(`${criteria.vehicles}/marcas/${criteria.brand}/modelos/${criteria.model}/anos/${criteria.yearCode}`);
     return data
   }
